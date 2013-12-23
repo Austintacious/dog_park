@@ -4,5 +4,5 @@ class Owner < ActiveRecord::Base
   validates :first_name, :format => { :with => /\A[a-zA-Z\s]+\z/ }
   validates :last_name, :format => { :with => /\A[a-zA-Z\s]+\z/ }
   validates :email, :format => { :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
-  has_many :dogs
+  has_many :dogs, through: :dogowners
 end
